@@ -1,22 +1,51 @@
-\documentclass[12pt, letterpaper, pdflatex, leqno]{report}
+% \usepackage{cite}                                                        % BiTeX
+% \usepackage[]{algorithm2e}
+% \usepackage[usenames,dvipsnames]{color}
+% \usepackage[letterspace=3pt]{microtype} % linespacing
+
+
+\documentclass[12pt, letterpaper]{article}            % report | leqno, pdflatex
 
 \usepackage[left=3.17cm, right=3.17cm, bottom=2.54cm, top=2.54cm]{geometry}
-\usepackage[pdftex]{graphicx}
-\usepackage{cite}                                                        % BiTeX
-\usepackage[]{algorithm2e}
+\usepackage{graphicx}                                                 % graphics
+\usepackage{fontspec}                                      % all different fonts
+\usepackage{color}                                              % custom colours
+\usepackage{lipsum}                                        % just a space filler
+\definecolor{natc}    {RGB}{021,055,090}
+\definecolor{subc}    {RGB}{121,121,121}
+\definecolor{headc}   {RGB}{034,065,094}
+\definecolor{headerc} {RGB}{127,145,173}
+\definecolor{footerc} {RGB}{128,128,128}
+\definecolor{footerc1}{RGB}{192,192,192}
+\definecolor{linec}   {RGB}{237,237,237}
+\usepackage[absolute]{textpos}      % absolute positioning of images | showboxes
+\renewcommand{\contentsname}{Table of Contents}             %change name for ToC
 
-% \usepackage[usenames,dvipsnames]{color}
-\usepackage{color}
-\definecolor{nat}    {RGB}{021,055,090}
-\definecolor{sub}    {RGB}{121,121,121}
-\definecolor{head}   {RGB}{127,145,173}
-\definecolor{header} {RGB}{034,065,094}
-\definecolor{footer} {RGB}{128,128,128}
-\definecolor{footer1}{RGB}{192,192,192}
-\definecolor{line}   {RGB}{237,237,237}
+% \usepackage{fontspec}
+% \usepackage{xcolor}
+% \usepackage{titlesec}
+% \defaultfontfeatures{Ligatures=TeX}
+% \setsansfont{Arial}
+% \setmainfont{Times New Roman}
+% \titleformat*{\section}{\fontsize{16}{18}\bfseries\sffamily}
+% \titleformat*{\subsection}{\fontsize{13}{16}\bfseries\sffamily}
+% \titleformat*{\subsubsection}{\fontsize{11}{14}\bfseries\sffamily}
 
-\usepackage[absolute]{textpos} % absolute positioning of images | showboxes
-\usepackage{lipsum}
+
+% define headers and footers
+\usepackage{etoolbox,fancyhdr,xcolor}
+\pagestyle{fancy}
+\newcommand{\footrulecolor}[1]{\patchcmd{\footrule}{\hrule}{\color{#1}\hrule}{}{}} % footer colour
+\fancyhead{} % clear all header fields
+\renewcommand{\headrulewidth}{0pt} % no line in header area
+\fancyhead[LE,LO]{\fontsize{9}{3}\selectfont\color{headerc}\textbf{CERN openlab Summer Student Report}}
+\fancyhead[RE,RO]{\fontsize{9}{3}\selectfont\color{headerc}\textbf{\the\year}}
+\fancyfoot{} % clear all footer fields
+\renewcommand{\footrulewidth}{0.4pt} % no line in header area
+\footrulecolor{linec}
+\fancyfoot[LE,LO]{ \fontsize{9}{3}\selectfont \textcolor{footerc}{\textbf{\thepage~$|$}}~\textcolor{footerc1}{\texttt{Page}}} % \fontfamily{ppl}\selectfont
+
+
 
 
 
@@ -24,6 +53,42 @@
 
 \begin{textblock*}{0mm}(-12.2mm,-0.3mm)\noindent \includegraphics*{./gfx/bg.png}\end{textblock*}
 \begin{textblock*}{0mm}(144.3mm,238.3mm)\noindent \includegraphics*{./gfx/openlab.png}\end{textblock*}
+\begin{textblock*}{150mm}(114.2mm,140.0mm)\noindent
+\textbf{\fontsize{20}{20}\selectfont\color{natc}Full Title of the Report}\\[36pt]
+\textbf{\fontsize{16}{20}\selectfont\color{natc}Month 2014}\\[18pt]
+{\fontsize{14}{20}\selectfont\color{subc}Author:}\\
+{\fontsize{14}{20}\selectfont\color{subc}First Name Family Name of the Author}\\[18pt]
+{\fontsize{14}{20}\selectfont\color{subc}Supervisor(s):}\\
+{\fontsize{14}{20}\selectfont\color{subc}First Name Family Name}\\
+{\fontsize{14}{20}\selectfont\color{subc}First Name Family Name}\\
+{\fontsize{14}{20}\selectfont\color{subc}Etc.}\\[18pt]
+\textbf{\fontsize{11}{20}\selectfont\color{subc}CERN openlab Summer Student Report 2014}
+
+\end{textblock*}
+~
+\thispagestyle{empty}
+\newpage
+
+\section*{Project Specification}
+\lipsum[1]
+\thispagestyle{myheadings}
+\markboth{left head}{right head}
+\newpage
+
+\section*{Abstract}
+\lipsum[1]
+\thispagestyle{myheadings}
+\newpage
+
+\tableofcontents
+\thispagestyle{myheadings}
+\newpage
+
+\section{Introduction}
+
+% \cleardoublepage
+% \pagestyle{plain}
+% \setcounter{page}{1}
 
 \lipsum[1-50]
 \end{document}
