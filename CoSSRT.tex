@@ -19,7 +19,18 @@
 \definecolor{footerc1}{RGB}{192,192,192}
 \definecolor{linec}   {RGB}{237,237,237}
 \usepackage[absolute]{textpos}      % absolute positioning of images | showboxes
+
 \renewcommand{\contentsname}{Table of Contents}             %change name for ToC
+\setcounter{tocdepth}{3}
+\usepackage{tocloft}
+\cftsetindents{section}{0em}{1.5em}
+\cftsetindents{subsection}{1.5em}{3.0em}
+\cftsetindents{subsubsection}{3.0em}{4.5em}
+% \cftsetindents{paragraph}{0.5in}{0.5in}
+% \makeatletter \renewcommand*\l@section{\@dottedtocline{1}{1.5em}{2.3em}} \makeatother
+\makeatletter \renewcommand*\l@section{\@dottedtocline{0}{0.0em}{1.5em}} \makeatother
+
+
 \usepackage{datetime}                                              % custom date
 \newdateformat{motd}{\monthname[\THEMONTH] \THEYEAR}               % custom date
 
@@ -87,5 +98,9 @@
 \fancyfoot[LE,LO]{ \fontsize{9}{3}\selectfont \textcolor{footerc}{\textbf{\thepage~$|$}}~\textcolor{footerc1}{\texttt{Page}}} % \fontfamily{ppl}\selectfont
 
 \section{Introduction}
+\lipsum[1-10]
+\subsection{lo1}
+\lipsum[1-10]
+\subsubsection{lo2}
 \lipsum[1-10]
 \end{document}
