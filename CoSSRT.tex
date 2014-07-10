@@ -1,23 +1,29 @@
-\documentclass[12pt, a4paper, pdflatex, leqno]{report}
+\documentclass[12pt, letterpaper, pdflatex, leqno]{report}
 
-\usepackage[left=2.5cm, right=2.5cm, bottom=2.5cm, top=2.5cm]{geometry}
+\usepackage[left=3.17cm, right=3.17cm, bottom=2.54cm, top=2.54cm]{geometry}
 \usepackage[pdftex]{graphicx}
 \usepackage{cite}                                                        % BiTeX
 \usepackage[]{algorithm2e}
 
-\usepackage[usenames,dvipsnames]{color}
-\definecolor{dkgreen}{rgb}{0,0.6,0}
-\definecolor{gray}{rgb}{0.5,0.5,0.5}
-\definecolor{mauve}{rgb}{0.58,0,0.82}
+% \usepackage[usenames,dvipsnames]{color}
+\usepackage{color}
+\definecolor{nat}    {RGB}{021,055,090}
+\definecolor{sub}    {RGB}{121,121,121}
+\definecolor{head}   {RGB}{127,145,173}
+\definecolor{header} {RGB}{034,065,094}
+\definecolor{footer} {RGB}{128,128,128}
+\definecolor{footer1}{RGB}{192,192,192}
+\definecolor{line}   {RGB}{237,237,237}
 
-\definecolor{natural}{rgb}{021,055,090}
-\definecolor{sub}    {rgb}{121,121,121}
-\definecolor{head}   {rgb}{127,145,173}
-\definecolor{header} {rgb}{034,065,094}
-
+\usepackage[absolute]{textpos} % absolute positioning of images | showboxes
 \usepackage{lipsum}
 
 
 
 \begin{document}
+
+\begin{textblock*}{0mm}(-12.2mm,-0.3mm)\noindent \includegraphics*{./gfx/bg.png}\end{textblock*}
+\begin{textblock*}{0mm}(144.3mm,238.3mm)\noindent \includegraphics*{./gfx/openlab.png}\end{textblock*}
+
+\lipsum[1-50]
 \end{document}
