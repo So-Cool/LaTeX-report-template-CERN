@@ -20,6 +20,19 @@
 \definecolor{linec}   {RGB}{237,237,237}
 \usepackage[absolute]{textpos}      % absolute positioning of images | showboxes
 \renewcommand{\contentsname}{Table of Contents}             %change name for ToC
+\usepackage{datetime}                                              % custom date
+\newdateformat{motd}{\monthname[\THEMONTH] \THEYEAR}               % custom date
+
+% define headers and footers
+\usepackage{etoolbox,fancyhdr,xcolor}
+\pagestyle{fancy}
+\newcommand{\footrulecolor}[1]{\patchcmd{\footrule}{\hrule}{\color{#1}\hrule}{}{}} % footer colour
+\fancyhead{} % clear all header fields
+\renewcommand{\headrulewidth}{0pt} % no line in header area
+\fancyhead[LE,LO]{\fontsize{9}{3}\selectfont\color{headerc}\textbf{CERN openlab Summer Student Report}}
+\fancyhead[RE,RO]{\fontsize{9}{3}\selectfont\color{headerc}\textbf{\the\year}}
+\fancyfoot{} % clear all footer fields
+
 
 % \usepackage{fontspec}
 % \usepackage{xcolor}
@@ -32,30 +45,13 @@
 % \titleformat*{\subsubsection}{\fontsize{11}{14}\bfseries\sffamily}
 
 
-% define headers and footers
-\usepackage{etoolbox,fancyhdr,xcolor}
-\pagestyle{fancy}
-\newcommand{\footrulecolor}[1]{\patchcmd{\footrule}{\hrule}{\color{#1}\hrule}{}{}} % footer colour
-\fancyhead{} % clear all header fields
-\renewcommand{\headrulewidth}{0pt} % no line in header area
-\fancyhead[LE,LO]{\fontsize{9}{3}\selectfont\color{headerc}\textbf{CERN openlab Summer Student Report}}
-\fancyhead[RE,RO]{\fontsize{9}{3}\selectfont\color{headerc}\textbf{\the\year}}
-\fancyfoot{} % clear all footer fields
-\renewcommand{\footrulewidth}{0.4pt} % no line in header area
-\footrulecolor{linec}
-\fancyfoot[LE,LO]{ \fontsize{9}{3}\selectfont \textcolor{footerc}{\textbf{\thepage~$|$}}~\textcolor{footerc1}{\texttt{Page}}} % \fontfamily{ppl}\selectfont
-
-
-
-
-
 \begin{document}
 
 \begin{textblock*}{0mm}(-12.2mm,-0.3mm)\noindent \includegraphics*{./gfx/bg.png}\end{textblock*}
 \begin{textblock*}{0mm}(144.3mm,238.3mm)\noindent \includegraphics*{./gfx/openlab.png}\end{textblock*}
 \begin{textblock*}{150mm}(114.2mm,140.0mm)\noindent
 \textbf{\fontsize{20}{20}\selectfont\color{natc}Full Title of the Report}\\[36pt]
-\textbf{\fontsize{16}{20}\selectfont\color{natc}Month 2014}\\[18pt]
+\textbf{\fontsize{16}{20}\selectfont\color{natc}\motd\today}\\[18pt]
 {\fontsize{14}{20}\selectfont\color{subc}Author:}\\
 {\fontsize{14}{20}\selectfont\color{subc}First Name Family Name of the Author}\\[18pt]
 {\fontsize{14}{20}\selectfont\color{subc}Supervisor(s):}\\
@@ -71,24 +67,25 @@
 
 \section*{Project Specification}
 \lipsum[1]
-\thispagestyle{myheadings}
-\markboth{left head}{right head}
+% \thispagestyle{empty}
+% \cleardoublepage
+% \setcounter{page}{1}
 \newpage
 
 \section*{Abstract}
 \lipsum[1]
-\thispagestyle{myheadings}
 \newpage
 
+%\section*{Table of Contents}
 \tableofcontents
-\thispagestyle{myheadings}
 \newpage
+
+% Start footer here
+\fancyfoot{} % clear all footer fields
+\renewcommand{\footrulewidth}{0.4pt} % no line in header area
+\footrulecolor{linec}
+\fancyfoot[LE,LO]{ \fontsize{9}{3}\selectfont \textcolor{footerc}{\textbf{\thepage~$|$}}~\textcolor{footerc1}{\texttt{Page}}} % \fontfamily{ppl}\selectfont
 
 \section{Introduction}
-
-% \cleardoublepage
-% \pagestyle{plain}
-% \setcounter{page}{1}
-
-\lipsum[1-50]
+\lipsum[1-10]
 \end{document}
