@@ -42,15 +42,19 @@
 \newfontfamily\headerfont[Ligatures=TeX]{Calibri}
 \newfontfamily\footerfont[Ligatures=TeX]{Times New Roman}
 
-\renewcommand{\contentsname}{\fontsize{16}{18}\color{headc}\bfseries\sffamily Table of Contents}             %change name for ToC
-\setcounter{tocdepth}{3}
+\usepackage{hyperref}										    % click-able ToC
 \usepackage{tocloft}
-\cftsetindents{section}{0em}{1.5em}
-\cftsetindents{subsection}{1.5em}{3.0em}
-\cftsetindents{subsubsection}{3.0em}{4.5em}
+\renewcommand{\contentsname}{\fontsize{16}{18}\color{headc}\bfseries\sffamily Table of Contents}             %change name for ToC
+
+\setcounter{tocdepth}{3}
+\cftsetindents{section}{0.0em}{1.0em}
+\cftsetindents{subsection}{1.0em}{2.0em}
+\cftsetindents{subsubsection}{2.0em}{3.0em}
 % \cftsetindents{paragraph}{0.5in}{0.5in}
 % \makeatletter \renewcommand*\l@section{\@dottedtocline{1}{1.5em}{2.3em}} \makeatother
 \makeatletter \renewcommand*\l@section{\@dottedtocline{0}{0.0em}{1.5em}} \makeatother
+
+\renewcommand{\cftsecfont}{\fontsize{19}{13}\color{headc}\bfseries\sffamily}
 
 % define headers and footers
 \usepackage{etoolbox,fancyhdr,xcolor}
