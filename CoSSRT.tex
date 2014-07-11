@@ -42,7 +42,8 @@
 \newfontfamily\headerfont[Ligatures=TeX]{Calibri}
 \newfontfamily\footerfont[Ligatures=TeX]{Times New Roman}
 
-\usepackage{hyperref}										    % click-able ToC
+
+\usepackage[linktocpage=true]{hyperref}						    % click-able ToC
 \usepackage{tocloft}
 \renewcommand{\contentsname}{\fontsize{16}{18}\color{headc}\bfseries\sffamily Table of Contents}             %change name for ToC
 
@@ -53,8 +54,8 @@
 % \cftsetindents{paragraph}{0.5in}{0.5in}
 % \makeatletter \renewcommand*\l@section{\@dottedtocline{1}{1.5em}{2.3em}} \makeatother
 \makeatletter \renewcommand*\l@section{\@dottedtocline{0}{0.0em}{1.5em}} \makeatother
+% \renewcommand{\cftsecfont}{\fontsize{19}{13}\color{headc}\bfseries\sffamily}
 
-\renewcommand{\cftsecfont}{\fontsize{19}{13}\color{headc}\bfseries\sffamily}
 
 % define headers and footers
 \usepackage{etoolbox,fancyhdr,xcolor}
@@ -102,7 +103,9 @@
 \newpage
 
 %\section*{Table of Contents}
-\tableofcontents
+{
+\fontsize{11}{13}\sffamily\linespread{1.750}\selectfont\tableofcontents
+}
 \thispagestyle{fancy}
 % \cleardoublepage
 % \setcounter{page}{1}
