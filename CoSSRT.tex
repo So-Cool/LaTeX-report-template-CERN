@@ -4,7 +4,7 @@
 % \usepackage[letterspace=3pt]{microtype} % linespacing
 
 
-\documentclass[12pt, letterpaper]{article}            % report | leqno, pdflatex
+\documentclass[11pt, letterpaper]{article}            % report | leqno, pdflatex
 
 \usepackage[left=3.17cm, right=3.17cm, bottom=2.54cm, top=2.54cm]{geometry}
 \usepackage{graphicx}                                                 % graphics
@@ -45,15 +45,15 @@
 \fancyfoot{} % clear all footer fields
 
 
-% \usepackage{fontspec}
-% \usepackage{xcolor}
-% \usepackage{titlesec}
-% \defaultfontfeatures{Ligatures=TeX}
-% \setsansfont{Arial}
-% \setmainfont{Times New Roman}
-% \titleformat*{\section}{\fontsize{16}{18}\bfseries\sffamily}
-% \titleformat*{\subsection}{\fontsize{13}{16}\bfseries\sffamily}
-% \titleformat*{\subsubsection}{\fontsize{11}{14}\bfseries\sffamily}
+\usepackage{fontspec}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\defaultfontfeatures{Ligatures=TeX}
+\setsansfont{Arial}
+\setmainfont{Times New Roman}
+\titleformat*{\section}{\fontsize{16}{18}\bfseries\sffamily}
+\titleformat*{\subsection}{\fontsize{13}{16}\bfseries\sffamily}
+\titleformat*{\subsubsection}{\fontsize{11}{14}\bfseries\sffamily}
 
 
 \begin{document}
@@ -61,15 +61,15 @@
 \begin{textblock*}{0mm}(-12.2mm,-0.3mm)\noindent \includegraphics*{./gfx/bg.png}\end{textblock*}
 \begin{textblock*}{0mm}(144.3mm,238.3mm)\noindent \includegraphics*{./gfx/openlab.png}\end{textblock*}
 \begin{textblock*}{150mm}(114.2mm,140.0mm)\noindent
-\textbf{\fontsize{20}{20}\selectfont\color{natc}Full Title of the Report}\\[36pt]
-\textbf{\fontsize{16}{20}\selectfont\color{natc}\motd\today}\\[18pt]
-{\fontsize{14}{20}\selectfont\color{subc}Author:}\\
-{\fontsize{14}{20}\selectfont\color{subc}First Name Family Name of the Author}\\[18pt]
-{\fontsize{14}{20}\selectfont\color{subc}Supervisor(s):}\\
-{\fontsize{14}{20}\selectfont\color{subc}First Name Family Name}\\
-{\fontsize{14}{20}\selectfont\color{subc}First Name Family Name}\\
-{\fontsize{14}{20}\selectfont\color{subc}Etc.}\\[18pt]
-\textbf{\fontsize{11}{20}\selectfont\color{subc}CERN openlab Summer Student Report 2014}
+{\bfseries\sffamily\textbf{\fontsize{20}{20}\selectfont\color{natc}Full Title of the Report}}\\[36pt]
+{\bfseries\sffamily\textbf{\fontsize{16}{20}\selectfont\color{natc}\motd\today}}\\[18pt]
+{\sffamily\fontsize{14}{20}\selectfont\color{subc}Author:}\\
+{\sffamily\fontsize{14}{20}\selectfont\color{subc}First Name Family Name of the Author}\\[18pt]
+{\sffamily\fontsize{14}{20}\selectfont\color{subc}Supervisor(s):}\\
+{\sffamily\fontsize{14}{20}\selectfont\color{subc}First Name Family Name}\\
+{\sffamily\fontsize{14}{20}\selectfont\color{subc}First Name Family Name}\\
+{\sffamily\fontsize{14}{20}\selectfont\color{subc}Etc.}\\[18pt]
+\textbf{\bfseries\sffamily\fontsize{11}{20}\selectfont\color{subc}CERN openlab Summer Student Report 2014}
 
 \end{textblock*}
 ~
