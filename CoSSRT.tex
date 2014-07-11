@@ -8,9 +8,9 @@
 
 \usepackage[left=3.17cm, right=3.17cm, bottom=2.54cm, top=2.54cm]{geometry}
 \usepackage{graphicx}                                                 % graphics
-\usepackage{fontspec}                                      % all different fonts
 \usepackage{color}                                              % custom colours
 \usepackage{lipsum}                                        % just a space filler
+\usepackage{soul}												% letter spacing
 \definecolor{natc}    {RGB}{021,055,090}
 \definecolor{subc}    {RGB}{121,121,121}
 \definecolor{headc}   {RGB}{034,065,094}
@@ -30,9 +30,20 @@
 % \makeatletter \renewcommand*\l@section{\@dottedtocline{1}{1.5em}{2.3em}} \makeatother
 \makeatletter \renewcommand*\l@section{\@dottedtocline{0}{0.0em}{1.5em}} \makeatother
 
-
 \usepackage{datetime}                                              % custom date
 \newdateformat{motd}{\monthname[\THEMONTH] \THEYEAR}               % custom date
+
+\usepackage{fontspec}                                      % all different fonts
+\usepackage{xcolor}
+\usepackage{titlesec}
+\defaultfontfeatures{Ligatures=TeX}
+\setsansfont{Arial}
+\setmainfont{Times New Roman}
+\titleformat*{\section}{\fontsize{16}{18}\color{headc}\bfseries\sffamily}
+\titleformat*{\subsection}{\fontsize{13}{15}\color{headc}\bfseries\sffamily}
+\titleformat*{\subsubsection}{\fontsize{11}{13}\color{headc}\bfseries\sffamily}
+\newfontfamily\headerfont[Ligatures=TeX]{Calibri}
+\newfontfamily\footerfont[Ligatures=TeX]{Times New Roman}
 
 % define headers and footers
 \usepackage{etoolbox,fancyhdr,xcolor}
@@ -43,20 +54,6 @@
 \fancyhead[LE,LO]{\headerfont\fontsize{9}{11}\selectfont\color{headerc}\textbf{CERN openlab Summer Student Report}}
 \fancyhead[RE,RO]{\headerfont\fontsize{9}{11}\selectfont\color{headerc}\textbf{\the\year}}
 \fancyfoot{} % clear all footer fields
-
-
-\usepackage{fontspec}
-\usepackage{xcolor}
-\usepackage{titlesec}
-\defaultfontfeatures{Ligatures=TeX}
-\setsansfont{Arial}
-\setmainfont{Times New Roman}
-\titleformat*{\section}{\fontsize{16}{18}\color{headc}\bfseries\sffamily}
-\titleformat*{\subsection}{\fontsize{13}{15}\color{headc}\bfseries\sffamily}
-\titleformat*{\subsubsection}{\fontsize{11}{13}\color{headc}\bfseries\sffamily}
-
-\newfontfamily\headerfont[Ligatures=TeX]{Calibri}
-\newfontfamily\footerfont[Ligatures=TeX]{Times New Roman}
 
 
 \begin{document}
@@ -98,7 +95,7 @@
 \fancyfoot{} % clear all footer fields
 \renewcommand{\footrulewidth}{0.4pt} % no line in header area
 \footrulecolor{linec}
-\fancyfoot[LE,LO]{\footerfont\fontsize{9}{11}\selectfont \textcolor{footerc}{\textbf{\thepage~$|$}}~\textcolor{footerc1}{\texttt{P~[3pt]a~[3pt]g~[3pt]e}}} % \fontfamily{ppl}\selectfont
+\fancyfoot[LE,LO]{\footerfont\fontsize{9}{11}\selectfont \textcolor{footerc}{\textbf{\thepage~$|$}}~\textcolor{footerc1}{\footerfont\so{\texttt{Page}}}} % \fontfamily{ppl}\selectfont
 
 \section{Introduction}
 \lipsum[1-10]
