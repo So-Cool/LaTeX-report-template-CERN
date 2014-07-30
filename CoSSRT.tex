@@ -8,7 +8,6 @@
 
 \documentclass[11pt, letterpaper]{article}            % report | leqno, pdflatex
 
-% \usepackage{cite}                                                      % BiTeX
 % \usepackage[]{algorithm2e}
 % \usepackage[usenames,dvipsnames]{color}
 % \usepackage[letterspace=3pt]{microtype} % linespacing
@@ -26,6 +25,8 @@
 \definecolor{footerc1}{RGB}{192,192,192}
 \definecolor{linec}   {RGB}{237,237,237}
 \usepackage[absolute]{textpos}      % absolute positioning of images | showboxes
+\usepackage{cite}                                                        % BiTeX
+\usepackage[square]{natbib}									  % Harvard citation
 
 \usepackage{datetime}                                              % custom date
 \newdateformat{motd}{\monthname[\THEMONTH] \THEYEAR}               % custom date
@@ -45,7 +46,9 @@
 
 \usepackage[linktocpage=true]{hyperref}						    % click-able ToC
 \usepackage{tocloft}
-\renewcommand{\contentsname}{\fontsize{16}{18}\color{headc}\bfseries\sffamily Table of Contents}             %change name for ToC
+\renewcommand{\contentsname}							   % ...
+	{\fontsize{16}{18}\color{headc}\bfseries\sffamily	   % ...
+	Table of Contents}									   % change name for ToC
 
 \setcounter{tocdepth}{3}
 \cftsetindents{section}{0.0em}{1.0em}
@@ -91,8 +94,7 @@
 
 \end{textblock*}
 ~
-\thispagestyle{empty}
-\newpage
+\thispagestyle{empty}\newpage
 
 \section*{Project Specification}
 \lipsum[1]
@@ -102,14 +104,8 @@
 \lipsum[1]
 \newpage
 
-%\section*{Table of Contents}
-{
-\fontsize{11}{13}\sffamily\linespread{1.750}\selectfont\tableofcontents
-}
-\thispagestyle{fancy}
-% \cleardoublepage
-% \setcounter{page}{1}
-\newpage
+{\fontsize{11}{13}\sffamily\linespread{1.750}\selectfont\tableofcontents}
+\thispagestyle{fancy}\newpage
 
 % Start footer here
 \fancyfoot{} % clear all footer fields
@@ -126,5 +122,15 @@
 \subsection{lo1}
 \lipsum[1-4]
 \subsubsection{lo2}
-\lipsum[1-3]
+\lipsum[1-2]~\citep{articleExample}
+\lipsum[3]
+
+% \begin{center} \noindent \line(1,0){250} \end{center}	  % Optional ending line
+
+
+%% Start References (a.k.a. bibliography)
+% \newpage								 % Optional new page before Bibliography
+\bibliography{bibliography.bib}{}
+\bibliographystyle{plainnat}
+
 \end{document}
