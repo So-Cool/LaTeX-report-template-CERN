@@ -17,7 +17,32 @@
 \definecolor{CERNish}{RGB}{000,083,161}
 
 \setbeamercolor{structure}{fg=openlabish, bg=openlabish-Sup}
-% \setbeamercolor{background canvas}{bg=CERNish-Sup}
+% \setbeamercolor{alerted text}{fg=orange}
+% \setbeamercolor{background canvas}{bg=white}
+% \setbeamercolor{block body alerted}{bg=normal text.bg!90!black}
+% \setbeamercolor{block body}{bg=normal text.bg!90!black}
+% \setbeamercolor{block body example}{bg=normal text.bg!90!black}
+% \setbeamercolor{block title alerted}{use={normal text,alerted text},fg=alerted text.fg!75!normal text.fg,bg=normal text.bg!75!black}
+% \setbeamercolor{block title}{bg=blue}
+% \setbeamercolor{block title example}{use={normal text,example text},fg=example text.fg!75!normal text.fg,bg=normal text.bg!75!black}
+% \setbeamercolor{fine separation line}{}
+% \setbeamercolor{frametitle}{fg=brown}
+% \setbeamercolor{item projected}{fg=black}
+% \setbeamercolor{normal text}{bg=black,fg=yellow}
+% \setbeamercolor{palette sidebar primary}{use=normal text,fg=normal text.fg}
+% \setbeamercolor{palette sidebar quaternary}{use=structure,fg=structure.fg}
+% \setbeamercolor{palette sidebar secondary}{use=structure,fg=structure.fg}
+% \setbeamercolor{palette sidebar tertiary}{use=normal text,fg=normal text.fg}
+% \setbeamercolor{section in sidebar}{fg=brown}
+% \setbeamercolor{section in sidebar shaded}{fg=grey}
+% \setbeamercolor{separation line}{}
+% \setbeamercolor{sidebar}{bg=red}
+% \setbeamercolor{sidebar}{parent=palette primary}
+% \setbeamercolor{structure}{bg=black, fg=green}
+% \setbeamercolor{subsection in sidebar}{fg=brown}
+% \setbeamercolor{subsection in sidebar shaded}{fg=grey}
+% \setbeamercolor{title}{fg=brown}
+% \setbeamercolor{titlelike}{fg=brown}
 
 % Slides background
 \usepackage{tikz}								 % opaque logo in the background
@@ -48,6 +73,10 @@
   \insertshorttitle\hfill%
   \insertframenumber}
 
+% References
+\usepackage{biblatex}
+\addbibresource{bibliography.bib}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -77,36 +106,41 @@
   \subsection{Subsection 1.1}
   \begin{frame}
     \frametitle{Title 1} 
-    \lipsum[1-2]
+    \lipsum[1]~\cite{articleExample}
   \end{frame}
 
   \begin{frame}
     \frametitle{Title 2} 
-    \lipsum[2-3]
+    \lipsum[2]
   \end{frame}
 
   \subsection{Subsection 1.2}
   \begin{frame}[plain]
     \frametitle{Title 3} 
-    \lipsum[3-4]
+    \lipsum[3]
   \end{frame}
 
 \section{Section 2}
   \subsection{Subsection 2.1}
   \begin{frame}
     \frametitle{Title 1} 
-    \lipsum[1-2]
+    \lipsum[4]
   \end{frame}
 
   \begin{frame}
     \frametitle{Title 2} 
-    \lipsum[2-3]
+    \lipsum[5]
   \end{frame}
 
   \subsection{Subsection 2.2}
   \begin{frame}[plain]
     \frametitle{Title 3} 
-    \lipsum[3-4]
+    \lipsum[6]
+  \end{frame}
+
+  \begin{frame}[t,allowframebreaks]
+    \frametitle{References}
+    \printbibliography
   \end{frame}
 
 \end{document}
