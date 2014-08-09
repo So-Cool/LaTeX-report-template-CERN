@@ -6,4 +6,102 @@
 %% Please do not remove author note!
 %
 
-\document class BEAMER
+\documentclass{beamer}
+
+\usepackage{lipsum}
+
+\usepackage{color}
+\definecolor{openlabish}{RGB}{000,089,159}
+\definecolor{openlabish-Sup}{RGB}{192,192,192}
+\definecolor{CERNish}{RGB}{000,083,161}
+
+% \mode<presentation>
+%  {
+%  % \usetheme{Amsterdam}
+%  \setbeamercolor*{palette secondary}{use=structure,fg=white,bg=red}
+%  \setbeamercolor*{palette tertiary}{use=structure,fg=white,bg=green}
+%  }
+\setbeamercolor{structure}{fg=openlabish, bg=openlabish-Sup}
+% \setbeamercolor{background canvas}{bg=CERNish-Sup}
+
+% Slides background
+\usepackage{tikz}								 % opaque logo in the background
+\usebackgroundtemplate{%
+	\tikz\node[opacity=0.4]{
+		\includegraphics[width=\paperwidth,height=\paperheight]{gfx/bg.png}
+	};
+}
+
+% Title page logo
+\titlegraphic{
+	\includegraphics[height=2cm]{gfx/LogoOutline-Blue.png}
+	\hspace*{4.75cm}~
+	\includegraphics[height=2cm]{gfx/openlab.png}
+}
+
+\setbeamertemplate{navigation symbols}{}
+\usepackage{beamerthemeshadow}
+
+\newcommand*{\LargerCdot}{\raisebox{-0.25ex}{\scalebox{3.0}{$\cdot$}}}
+
+\usepackage{mathrsfs}
+
+\expandafter\def\expandafter\insertshorttitle\expandafter{%
+  \insertshorttitle\hfill%
+  \insertframenumber}
+
+\begin{document}
+
+\title{Presentation Title}  
+\author{Author Name}
+\institute{My institute}
+\date{\today}
+
+\begin{frame}
+	\titlepage
+\end{frame}
+
+\begin{frame}
+  \frametitle{Table of contents}
+  \tableofcontents
+\end{frame}
+
+% CONTENT %
+
+\section{Section 1} 
+  \subsection{Subsection 1.1}
+  \begin{frame}
+    \frametitle{Title 1} 
+    \lipsum[1-2]
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Title 2} 
+    \lipsum[2-3]
+  \end{frame}
+
+  \subsection{Subsection 1.2}
+  \begin{frame}[plain]
+    \frametitle{Title 3} 
+    \lipsum[3-4]
+  \end{frame}
+
+\section{Section 2}
+  \subsection{Subsection 2.1}
+  \begin{frame}
+    \frametitle{Title 1} 
+    \lipsum[1-2]
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Title 2} 
+    \lipsum[2-3]
+  \end{frame}
+
+  \subsection{Subsection 2.2}
+  \begin{frame}[plain]
+    \frametitle{Title 3} 
+    \lipsum[3-4]
+  \end{frame}
+
+\end{document}
