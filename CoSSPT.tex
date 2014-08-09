@@ -8,6 +8,7 @@
 
 \documentclass{beamer}
 
+
 \usepackage{lipsum}
 
 \usepackage{color}
@@ -15,28 +16,23 @@
 \definecolor{openlabish-Sup}{RGB}{192,192,192}
 \definecolor{CERNish}{RGB}{000,083,161}
 
-% \mode<presentation>
-%  {
-%  % \usetheme{Amsterdam}
-%  \setbeamercolor*{palette secondary}{use=structure,fg=white,bg=red}
-%  \setbeamercolor*{palette tertiary}{use=structure,fg=white,bg=green}
-%  }
 \setbeamercolor{structure}{fg=openlabish, bg=openlabish-Sup}
 % \setbeamercolor{background canvas}{bg=CERNish-Sup}
 
 % Slides background
 \usepackage{tikz}								 % opaque logo in the background
-\usebackgroundtemplate{%
-	\tikz\node[opacity=0.4]{
-		\includegraphics[width=\paperwidth,height=\paperheight]{gfx/bg.png}
+\usebackgroundtemplate{
+	\tikz\node[opacity=0.3]{
+		\noindent \hspace{-12.2mm} \vspace{-0.3mm} \includegraphics*[width=1.4\paperwidth]{./gfx/bg.png}
+		% ,height=\paperheight
 	};
 }
 
 % Title page logo
 \titlegraphic{
-	\includegraphics[height=2cm]{gfx/LogoOutline-Blue.png}
+	\includegraphics[height=2cm]{./gfx/LogoOutline-Blue.png}
 	\hspace*{4.75cm}~
-	\includegraphics[height=2cm]{gfx/openlab.png}
+	\includegraphics[height=2cm]{./gfx/openlab-transparent.png}
 }
 
 \setbeamertemplate{navigation symbols}{}
@@ -49,6 +45,13 @@
 \expandafter\def\expandafter\insertshorttitle\expandafter{%
   \insertshorttitle\hfill%
   \insertframenumber}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
 
