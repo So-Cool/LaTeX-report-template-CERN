@@ -22,14 +22,15 @@
 % Slides background
 \usepackage{tikz}								 % opaque logo in the background
 \usebackgroundtemplate{
-	\tikz\node[opacity=0.3]{
-		\noindent \hspace{-12.2mm} \vspace{-0.3mm} \includegraphics*[width=1.4\paperwidth]{./gfx/bg.png}
+	\tikz\node[opacity=0.25]{
+		\noindent \hspace{-12.2mm} \vspace{-0.3mm} \includegraphics*[width=1.2\paperwidth]{./gfx/bg.png}
 		% ,height=\paperheight
 	};
 }
 
 % Title page logo
 \titlegraphic{
+	\vspace*{1cm}
 	\includegraphics[height=2cm]{./gfx/LogoOutline-Blue.png}
 	\hspace*{4.75cm}~
 	\includegraphics[height=2cm]{./gfx/openlab-transparent.png}
@@ -37,10 +38,6 @@
 
 \setbeamertemplate{navigation symbols}{}
 \usepackage{beamerthemeshadow}
-
-\newcommand*{\LargerCdot}{\raisebox{-0.25ex}{\scalebox{3.0}{$\cdot$}}}
-
-\usepackage{mathrsfs}
 
 \expandafter\def\expandafter\insertshorttitle\expandafter{%
   \insertshorttitle\hfill%
@@ -56,20 +53,20 @@
 \begin{document}
 
 \title{Presentation Title}  
-\author{Author Name}
-\institute{My institute}
+\author{Author's Name}
+\institute{Author's Institute/Section}
 \date{\today}
 
-\begin{frame}
+\begin{frame}[plain]
 	\titlepage
 \end{frame}
 
-\begin{frame}
+\begin{frame}[plain]
   \frametitle{Table of contents}
   \tableofcontents
 \end{frame}
 
-% CONTENT %
+%%%% CONTENT %%%%
 
 \section{Section 1} 
   \subsection{Subsection 1.1}
