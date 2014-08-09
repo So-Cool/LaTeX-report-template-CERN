@@ -30,10 +30,15 @@
 
 % Title page logo
 \titlegraphic{
-	\vspace*{1cm}
-	\includegraphics[height=2cm]{./gfx/LogoOutline-Blue.png}
-	\hspace*{4.75cm}~
+	% \vspace*{1cm}
+	\mbox{ \hspace{0.697916667cm} \includegraphics[height=2cm]{./gfx/LogoOutline-Blue.png} \hspace{0.697916667cm} }
+	% \hspace*{4.75cm}~
+	\hspace*{3.25cm}~
+	% space is 1.697916667 * image height i.e. (1.697916667*2cm -2cm) = (3.395833334cm -2cm)/2 = 0.697916667
 	\includegraphics[height=2cm]{./gfx/openlab-transparent.png}
+	% collaboration logo
+	\vspace*{0.3cm}
+	\includegraphics[height=.7cm]{./gfx/siemens-transparent.png}
 }
 
 \setbeamertemplate{navigation symbols}{}
