@@ -12,37 +12,10 @@
 \usepackage{lipsum}
 
 \usepackage{color}
-\definecolor{openlabish}{RGB}{000,089,159}
-\definecolor{openlabish-Sup}{RGB}{192,192,192}
 \definecolor{CERNish}{RGB}{000,083,161}
+\definecolor{CERNish-sup}{RGB}{192,192,192}
 
-\setbeamercolor{structure}{fg=openlabish, bg=openlabish-Sup}
-% \setbeamercolor{alerted text}{fg=orange}
-% \setbeamercolor{background canvas}{bg=white}
-% \setbeamercolor{block body alerted}{bg=normal text.bg!90!black}
-% \setbeamercolor{block body}{bg=normal text.bg!90!black}
-% \setbeamercolor{block body example}{bg=normal text.bg!90!black}
-% \setbeamercolor{block title alerted}{use={normal text,alerted text},fg=alerted text.fg!75!normal text.fg,bg=normal text.bg!75!black}
-% \setbeamercolor{block title}{bg=blue}
-% \setbeamercolor{block title example}{use={normal text,example text},fg=example text.fg!75!normal text.fg,bg=normal text.bg!75!black}
-% \setbeamercolor{fine separation line}{}
-% \setbeamercolor{frametitle}{fg=brown}
-% \setbeamercolor{item projected}{fg=black}
-% \setbeamercolor{normal text}{bg=black,fg=yellow}
-% \setbeamercolor{palette sidebar primary}{use=normal text,fg=normal text.fg}
-% \setbeamercolor{palette sidebar quaternary}{use=structure,fg=structure.fg}
-% \setbeamercolor{palette sidebar secondary}{use=structure,fg=structure.fg}
-% \setbeamercolor{palette sidebar tertiary}{use=normal text,fg=normal text.fg}
-% \setbeamercolor{section in sidebar}{fg=brown}
-% \setbeamercolor{section in sidebar shaded}{fg=grey}
-% \setbeamercolor{separation line}{}
-% \setbeamercolor{sidebar}{bg=red}
-% \setbeamercolor{sidebar}{parent=palette primary}
-% \setbeamercolor{structure}{bg=black, fg=green}
-% \setbeamercolor{subsection in sidebar}{fg=brown}
-% \setbeamercolor{subsection in sidebar shaded}{fg=grey}
-% \setbeamercolor{title}{fg=brown}
-% \setbeamercolor{titlelike}{fg=brown}
+\setbeamercolor{structure}{fg=CERNish, bg=CERNish-sup}
 
 % Slides background
 \usepackage{tikz}								 % opaque logo in the background
@@ -138,9 +111,9 @@
     \lipsum[6]
   \end{frame}
 
-  \begin{frame}[t,allowframebreaks]
+  \begin{frame}[t, allowframebreaks, plain]
     \frametitle{References}
-    \printbibliography
+    \printbibliography[heading=none]
   \end{frame}
 
 \end{document}
