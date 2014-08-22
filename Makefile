@@ -15,16 +15,26 @@ report_plain:
 	lualatex CoSSRT.tex
 
 presentation:
-	pdflatex CoSSRT.tex
-	biber CoSSRT
-	pdflatex CoSSRT.tex
-	pdflatex CoSSRT.tex
+	pdflatex CoSSPT.tex
+	biber CoSSPT
+	pdflatex CoSSPT.tex
+	pdflatex CoSSPT.tex
 
 presentation_plain:
-	pdflatex CoSSRT.tex
+	pdflatex CoSSPT.tex
 
 clean_all:
-	rm 
+	rm -f *.aux
+	rm -f *.log
+	rm -f *.out
+	rm -f *.toc
+	rm -f *.bbl
+	rm -f *.blg
+	rm -f *.bcf
+	rm -f *.nav
+	rm -f *.run.xml
+	rm -f *.snm
+
 
 convert_presentation169:
 	mkdir -p presentation_image

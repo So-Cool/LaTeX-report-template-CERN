@@ -62,7 +62,7 @@ The conversion procedure requires `Python` and module `python-pptx`, available [
 ## Platform dependencies
 As the CERN template is using multiple fonts it is required to have them installed.
 
-	https://aur.archlinux.org/packages/ttf-vista-fonts/ and after that run
+	https://aur.archlinux.org/packages/ttf-vista-fonts/
 
 then do:
 
