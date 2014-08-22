@@ -91,3 +91,6 @@ sympy-plots-for-*.tex/
 
 # Outputs
 *.pdf
+*.pptx
+presentation_image
+presentation_image/*

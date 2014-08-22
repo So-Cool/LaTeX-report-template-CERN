@@ -53,7 +53,7 @@ If for some reason (CERN specific) you are forced to deliver presentation in `pp
 
 	make convert
 
-to get PowerPoint format; it is not beautiful, but sufficient.
+to get PowerPoint format; it is not beautiful, but sufficient. Be patient---this may take a while.
 
 The conversion procedure requires `Python` and module `python-pptx`, available [here](https://github.com/scanny/python-pptx "python-pptx module"). The easiest way to install it, is to use `pip`:
 

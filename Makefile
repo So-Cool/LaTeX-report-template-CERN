@@ -3,7 +3,7 @@ reportP: report_plain
 presentation: presentation
 presentationP: presentation_plain
 clean: clean_all
-convert: convert_presentation169
+convert: convert_presentation
 
 report:
 	lualatex CoSSRT.tex
@@ -34,9 +34,13 @@ clean_all:
 	rm -f *.nav
 	rm -f *.run.xml
 	rm -f *.snm
+	rm -fr presentation_image
 
+convert_presentation:
+	mkdir -p presentation_image
+	convert -verbose -density 600 -fill white -opaque none -quality 100 -resize 1600x -fill white -opaque none "CoSSPT.pdf" "presentation_image/%02d.png"
 
-convert_presentation169:
+convert_presentation_sh:
 	mkdir -p presentation_image
 	convert -verbose -density 600 -fill white -opaque none -quality 100 -resize 1600x -fill white -opaque none "CoSSPT.pdf" "presentation_image/%02d.png"
 	# pip install python-pptx
@@ -51,3 +55,15 @@ convert_presentation169:
 		slide = p.slides.add_slide(blank_slide_layout)
 		slide.shapes.add_picture(im, 0, 0, p.slide_width, p.slide_height)
 	p.save("CoSSPT.pptx")
+
+convert_presentation:
+	{ echo "import pptx" ;\
+	  echo "import glob" ;\
+	  echo "p = pptx.Presentation()" ;\
+	  echo "ims = sorted(glob.glob('presentation_image/*'))"; \
+	  echo "blank_slide_layout= p.slide_layouts[6]" ;\
+  	  echo "for im in ims:" ;\
+	  echo "	slide = p.slides.add_slide(blank_slide_layout)" ;\
+	  echo "	slide.shapes.add_picture(im, 0, 0, p.slide_width, p.slide_height)" ;\
+	  echo "p.save('CoSSPT.pptx')" ;\
+	} | python
