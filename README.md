@@ -1,7 +1,8 @@
 LaTeX-report-template-CERN
 ==========================
 
-Template in LaTeX for openlab Summer Student report and presentation at CERN
+Template in LaTeX for openlab Summer Student report and presentation at CERN.  
+Please bear with me through all the `README` file as this will ease all the process.
 
 ## Report --- `CoSSRT.tex`
 Due to font selections, please compile with `lualatex` i.e.
@@ -60,11 +61,17 @@ The conversion procedure requires `Python` and module `python-pptx`, available [
 	pip install python-pptx
 
 ## Platform dependencies
-As the CERN template is using multiple fonts it is required to have them installed.
+As the CERN template is using multiple fonts it is required to have them installed.  
+Windows users should be all-right.  
+Package for Arch Linux is available [here](https://aur.archlinux.org/packages/ttf-vista-fonts/ "Arch Linux package");
+for Debian Linux (this includes Ubuntu) do:
 
-	https://aur.archlinux.org/packages/ttf-vista-fonts/
+	sudo apt-get install cabextract
 
-then do:
+and then use script available [here](http://plasmasturm.org/code/vistafonts-installer/vistafonts-installer "Vista fonts scripts") to install the fonts;  
+Mac users: download [Open XML Converter](http://www.microsoft.com/en-gb/download/details.aspx?id=27334 "Open XML Converter for Mac"); *right click* on the package and select *show package contents*; go to `Contents/Packages`; again do *show package contents* on `OpenXML_all_fonts`; go to `Contents`; double-click on `Archive.pax.gz`; go to unpacked folder; install **Calibri** and **Times New Roman** by double clicking on them.
+
+Finally for all platforms do:
 
 	mkluatexfontdb
 
