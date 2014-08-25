@@ -1,3 +1,4 @@
+all: report
 report: report
 reportP: report_plain
 presentation: presentation

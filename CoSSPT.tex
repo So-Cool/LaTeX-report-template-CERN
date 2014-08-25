@@ -21,35 +21,76 @@
 % Slides background
 \usepackage{tikz}								 % opaque logo in the background
 \usebackgroundtemplate{
-	\tikz\node[opacity=0.25]{
-		\noindent \hspace{-12.2mm} \vspace{-0.3mm} \includegraphics*[width=1.2\paperwidth]{./gfx/bg.png}
+  \vbox to \paperheight{\vspace{\headheight}\hbox to \paperwidth{\hfil\includegraphics[width=\paperwidth]{./gfx/image1.png}\hfil}\vfil}
+	% \tikz\node[opacity=0.25]{
+		% \mbox{~\\~\\[10cm]} \noindent \hspace*{-12.2mm} \vspace*{-3000mm} \includegraphics*[width=1.2\paperwidth]{./gfx/image1.png}%{./gfx/bg.png}
 		% ,height=\paperheight
-	};
+	% };
 }
 
 % Title page logo
-\titlegraphic{
-	% \vspace*{1cm}
-	\mbox{ \hspace{0.697916667cm} \includegraphics[height=2cm]{./gfx/LogoOutline-Blue.png} \hspace{0.697916667cm} }
-	% \hspace*{4.75cm}~
-	\hspace*{3.25cm}~
-	% space is 1.697916667 * image height i.e. (1.697916667*2cm -2cm) = (3.395833334cm -2cm)/2 = 0.697916667
-	\includegraphics[height=2cm]{./gfx/openlab-transparent.png}
-	% collaboration logo
-	\vspace*{0.3cm}
-	\includegraphics[height=.7cm]{./gfx/siemens-transparent.png}
-}
+% \titlegraphic{
+% 	% \vspace*{1cm}
+% 	\mbox{ \hspace{0.697916667cm} \includegraphics[height=2cm]{./gfx/LogoOutline-Blue.png} \hspace{0.697916667cm} }
+% 	% \hspace*{4.75cm}~
+% 	\hspace*{3.25cm}~
+% 	% space is 1.697916667 * image height i.e. (1.697916667*2cm -2cm) = (3.395833334cm -2cm)/2 = 0.697916667
+% 	\includegraphics[height=2cm]{./gfx/openlab-transparent.png}
+% 	% collaboration logo
+% 	\vspace*{0.3cm}
+%   {
+%   \centering
+%   \includegraphics[height=.7cm]{./gfx/siemens-transparent.png}
+%   }
+% }
 
 \setbeamertemplate{navigation symbols}{}
 \usepackage{beamerthemeshadow}
 
-\expandafter\def\expandafter\insertshorttitle\expandafter{%
-  \insertshorttitle\hfill%
-  \insertframenumber}
+% Modify footer
+\makeatletter
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.25\paperwidth,ht=2.25ex,dp=1ex,left]{author in head/foot}
+    \usebeamerfont{date in head/foot}\hspace*{1.5em}\insertshortdate
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.25\paperwidth,ht=2.25ex,dp=1ex,right]{author in head/foot}
+    \usebeamerfont{author in head/foot}\insertshortauthor\hspace*{1.5em}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.25\paperwidth,ht=2.25ex,dp=1ex,left]{title in head/foot}
+    \usebeamerfont{title in head/foot}\hspace*{1.5em}\insertshorttitle
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.25\paperwidth,ht=2.25ex,dp=1ex,right]{title in head/foot}
+    \usebeamerfont{title in head/foot}\insertframenumber\hspace*{1.5em}
+  \end{beamercolorbox}%
+  }%
+  \vskip0pt
+}
+\makeatother
+
+% Add logo to TitleFrame
+% \strut\insertframetitle\strut \hfill\includegraphics[width=1cm]{./gfx/openlab-transparent.png}
+% \usepackage{textpos}
+% \addtobeamertemplate{frametitle}{}{%
+% \begin{textblock*}{100mm}(.85\textwidth,-1cm)%
+% \includegraphics[height=1cm,width=2cm]{./gfx/openlab-transparent.png}%
+% \end{textblock*}%
+% }
 
 % References
 \usepackage{biblatex}
 \addbibresource{bibliography.bib}
+
+% Footer only frames
+\makeatletter
+\define@key{beamerframe}{foot}[true]{
+ \setbeamertemplate{footline}[]                  % \setbeamertemplate*{footline}
+ \setbeamertemplate{headline}[plain]             % \setbeamertemplate*{headline}
+ \def\beamer@entrycode{\vspace*{-\headheight}}
+}
+\makeatother
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -60,14 +101,25 @@
 
 \begin{document}
 
-\title{Presentation Title}  
+\title{Presentation Title}
+\subtitle{Presentation Subtitle}
 \author{Author's Name}
 \institute{Author's Institute/Section}
 \date{\today}
 
+{
+\usebackgroundtemplate{
+  \vbox to \paperheight{\vfil\hbox to \paperwidth{\hfil\includegraphics[width=\paperwidth]{./gfx/image2.png}\hfil}\vfil}
+}
 \begin{frame}[plain]
-	\titlepage
+  \begin{minipage}{0.48\paperwidth}
+    \vspace*{8.5cm}\hspace*{0.6cm}\tiny Powered by \LaTeX%
+  \end{minipage}%
+  \begin{minipage}{0.42\paperwidth}
+    \vspace*{3.1cm}\titlepage%
+  \end{minipage}
 \end{frame}
+}
 
 \begin{frame}[plain]
   \frametitle{Table of contents}
@@ -78,7 +130,7 @@
 
 \section{Section 1} 
   \subsection{Subsection 1.1}
-  \begin{frame}
+  \begin{frame}[foot]
     \frametitle{Title 1} 
     \lipsum[1]~\cite{articleExample}
   \end{frame}
