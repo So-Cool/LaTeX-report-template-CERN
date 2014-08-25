@@ -10,6 +10,8 @@
 \documentclass[aspectratio=169]{beamer}
 % \documentclass{beamer}
 
+\usepackage{etoolbox}
+
 \usepackage{lipsum}
 
 \usepackage{color}
@@ -21,7 +23,7 @@
 % Slides background
 \usepackage{tikz}								 % opaque logo in the background
 \usebackgroundtemplate{
-  \vbox to \paperheight{\vspace{\headheight}\hbox to \paperwidth{\hfil\includegraphics[width=\paperwidth]{./gfx/image1.png}\hfil}\vfil}
+  \vbox to \paperheight{\vspace{1.7\headheight}\hbox to \paperwidth{\includegraphics[height=.85\paperheight]{./gfx/image1.png}\hfil}\vfil}
 	% \tikz\node[opacity=0.25]{
 		% \mbox{~\\~\\[10cm]} \noindent \hspace*{-12.2mm} \vspace*{-3000mm} \includegraphics*[width=1.2\paperwidth]{./gfx/image1.png}%{./gfx/bg.png}
 		% ,height=\paperheight
@@ -86,9 +88,9 @@
 % Footer only frames
 \makeatletter
 \define@key{beamerframe}{foot}[true]{
- \setbeamertemplate{footline}[]                  % \setbeamertemplate*{footline}
- \setbeamertemplate{headline}[plain]             % \setbeamertemplate*{headline}
- \def\beamer@entrycode{\vspace*{-\headheight}}
+  \setbeamertemplate{footline}[]                  % \setbeamertemplate*{footline}
+  \setbeamertemplate{headline}[plain]             % \setbeamertemplate*{headline}
+  \def\beamer@entrycode{\vspace*{-\headheight}}
 }
 \makeatother
 
@@ -113,13 +115,16 @@
 }
 \begin{frame}[plain]
   \begin{minipage}{0.48\paperwidth}
-    \vspace*{8.5cm}\hspace*{0.6cm}\tiny Powered by \LaTeX%
+    \vspace*{8.5cm}\hspace*{0.6cm}\tiny Powered by \LaTeX. K.\ B.\ Sokol.%
   \end{minipage}%
   \begin{minipage}{0.42\paperwidth}
     \vspace*{3.1cm}\titlepage%
   \end{minipage}
 \end{frame}
 }
+
+% \addtobeamertemplate{frame begin}{}{\hspace*{13mm}}
+\AtBeginEnvironment{frame}{\hspace*{13mm}}
 
 \begin{frame}[plain]
   \frametitle{Table of contents}
