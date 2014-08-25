@@ -11,6 +11,7 @@
 % \documentclass{beamer}
 
 \usepackage{etoolbox}
+\usepackage{changepage}
 
 \usepackage{lipsum}
 
@@ -123,55 +124,72 @@
 \end{frame}
 }
 
-% \addtobeamertemplate{frame begin}{}{\hspace*{13mm}}
-\AtBeginEnvironment{frame}{\hspace*{13mm}}
-
-\begin{frame}[plain]
-  \frametitle{Table of contents}
-  \tableofcontents
+\begin{frame}[plain]{Table of contents}%
+  % \hfill\parbox{.88\paperwidth}{\tableofcontents}
+  \begin{minipage}{13mm}
+    \vspace{0pt}
+    \hfill
+  \end{minipage}\begin{minipage}{0.9\textwidth}
+    \vspace{0pt}
+    \tableofcontents
+  \end{minipage}
+  % \begin{minipage}[t][\paperheight]{13mm}
+  %   ~
+  % \end{minipage}
+  % \begin{minipage}[t]{0.9\paperwidth}
+  %   \vspace{0pt}  
+  %   \tableofcontents
+  % \end{minipage}
 \end{frame}
 
 %%%% CONTENT %%%%
 
 \section{Section 1} 
   \subsection{Subsection 1.1}
-  \begin{frame}[foot]
-    \frametitle{Title 1} 
+  \begin{frame}[foot]{Title 1}
+  \begin{adjustwidth}{13mm}{0mm}
     \lipsum[1]~\cite{articleExample}
+  \end{adjustwidth}
   \end{frame}
 
-  \begin{frame}
-    \frametitle{Title 2} 
+  \begin{frame}{Title 2}
+  \begin{adjustwidth}{13mm}{0mm}
     \lipsum[2]
+  \end{adjustwidth}
   \end{frame}
 
   \subsection{Subsection 1.2}
-  \begin{frame}[plain]
-    \frametitle{Title 3} 
+  \begin{frame}[plain]{Title 3}
+  \begin{adjustwidth}{13mm}{0mm}
     \lipsum[3]
+  \end{adjustwidth}
   \end{frame}
 
 \section{Section 2}
   \subsection{Subsection 2.1}
-  \begin{frame}
-    \frametitle{Title 1} 
+  \begin{frame}{Title 1}
+  \begin{adjustwidth}{13mm}{0mm}
     \lipsum[4]
+  \end{adjustwidth}
   \end{frame}
 
-  \begin{frame}
-    \frametitle{Title 2} 
+  \begin{frame}{Title 2}
+  \begin{adjustwidth}{13mm}{0mm}
     \lipsum[5]
+  \end{adjustwidth}
   \end{frame}
 
   \subsection{Subsection 2.2}
-  \begin{frame}[plain]
-    \frametitle{Title 3} 
+  \begin{frame}[plain]{Title 3}
+  \begin{adjustwidth}{13mm}{0mm}
     \lipsum[6]
+  \end{adjustwidth}
   \end{frame}
 
-  \begin{frame}[t, allowframebreaks, plain]
-    \frametitle{References}
+  \begin{frame}[t, allowframebreaks, plain]{References}
+  \begin{adjustwidth}{13mm}{0mm}
     \printbibliography[heading=none]
+  \end{adjustwidth}
   \end{frame}
 
 \end{document}

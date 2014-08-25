@@ -63,7 +63,7 @@ The conversion procedure requires `Python` and module `python-pptx`, available [
 ## Platform dependencies
 As the CERN template is using multiple fonts it is required to have them installed.  
 Windows users should be all-right.  
-Package for Arch Linux is available [here](https://aur.archlinux.org/packages/ttf-vista-fonts/ "Arch Linux package");
+Package for Arch Linux is available [here](https://aur.archlinux.org/packages/ttf-vista-fonts/ "Arch Linux package") (thanks [Beni](https://github.com/blipp));
 for Debian Linux (this includes Ubuntu) do:
 
 	sudo apt-get install cabextract
